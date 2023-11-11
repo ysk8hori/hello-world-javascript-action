@@ -1,5 +1,5 @@
-const core = required("@actions/core");
-const github = required("@actions/github");
+const core = require("@actions/core");
+const github = require("@actions/github");
 // import { Octokit } from "@octokit/rest";
 
 try {
