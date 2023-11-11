@@ -7,9 +7,10 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: ysk8hori/hello-world-javascript-action@v2.3
+        uses: ysk8hori/hello-world-javascript-action@v2.4
         with:
           who-to-greet: "ysk8hori"
+          access-token: ${{ secrets.GITHUB_TOKEN }}
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
