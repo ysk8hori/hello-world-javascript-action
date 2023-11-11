@@ -1,6 +1,5 @@
 import * as core from "@actions/core";
 import * as github from "@actions/github";
-import { Octokit } from "@octokit/rest";
 
 try {
   // `who-to-greet` import defined in action metadata file
@@ -11,14 +10,13 @@ try {
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2);
   console.log(`The event payload: ${payload}`);
-  const octokit = new Octokit({
-    auth: core.getInput("access-token"),
-    userAgent: "@ysk8hori/hello-world-javascript-action",
-  });
-  await octokit.issues.createComment({
-    ...github.context.repo,
+  const octokit = github.getOctokit(core.getInput("github-token"));
+  // issue #1 に書き込む
+  octokit.issues.createComment({
+    owner: github.context.repo.owner,
+    repo: github.context.repo.repo,
     issue_number: 1,
-    body: "Hello World!",
+    body: "Hello World",
   });
 } catch (error) {
   core.setFailed(error.message);
