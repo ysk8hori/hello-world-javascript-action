@@ -12,7 +12,7 @@ try {
   console.log(`The event payload: ${payload}`);
   const octokit = github.getOctokit(core.getInput("access-token"));
   // issue #1 に書き込む
-  octokit.issues.createComment({
+  octokit.rest.issues.createComment({
     owner: github.context.repo.owner,
     repo: github.context.repo.repo,
     issue_number: 1,

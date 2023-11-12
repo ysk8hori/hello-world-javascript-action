@@ -30218,7 +30218,7 @@ try {
   console.log(`The event payload: ${payload}`);
   const octokit = _actions_github__WEBPACK_IMPORTED_MODULE_1__.getOctokit(_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("access-token"));
   // issue #1 に書き込む
-  octokit.issues.createComment({
+  octokit.rest.issues.createComment({
     owner: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo.owner,
     repo: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo.repo,
     issue_number: 1,
