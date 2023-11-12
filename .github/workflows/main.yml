@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: ysk8hori/hello-world-javascript-action@v2.8
+        uses: ysk8hori/hello-world-javascript-action@v3.0
         with:
           who-to-greet: "ysk8hori"
           access-token: ${{ secrets.GITHUB_TOKEN }}
