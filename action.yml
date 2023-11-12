@@ -1,5 +1,8 @@
 name: "Hello World"
 description: "Greet someone and record the time"
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  issues: write
 inputs:
   who-to-greet: # id of input
     description: "Who to greet"

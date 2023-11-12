@@ -1,9 +1,5 @@
 on: [push]
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  issues: write
-
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
@@ -11,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: ysk8hori/hello-world-javascript-action@v2.5
+        uses: ysk8hori/hello-world-javascript-action@v2.6
         with:
           who-to-greet: "ysk8hori"
           access-token: ${{ secrets.GITHUB_TOKEN }}
