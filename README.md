@@ -27,3 +27,14 @@ uses: actions/hello-world-javascript-action@e76147da8e5c81eaf017dede5645551d4b94
 with:
   who-to-greet: "Mona the Octocat"
 ```
+
+## メモ
+
+### `octokit.rest.issues.createComment` が 403 になる
+
+workflow から github token に権限を付与する。
+
+```yml
+permissions:
+  issues: write
+```
