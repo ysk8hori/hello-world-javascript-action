@@ -1,5 +1,9 @@
 on: [push]
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  issues: write
+
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
