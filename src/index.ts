@@ -25,7 +25,16 @@ try {
     basehead: `${github.context.payload.pull_request?.base.sha}...${github.context.payload.pull_request?.head.sha}`,
   });
   compareResult.then((result) => {
-    console.log(result.data);
+    console.log(
+      "▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼"
+    );
+    console.log(
+      result.data.files?.map((file) => ({
+        filename: file.filename,
+        status: file.status,
+        hoge: file.previous_filename,
+      }))
+    );
   });
 } catch (error) {
   core.setFailed((error as Error).message);

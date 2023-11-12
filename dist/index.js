@@ -29949,7 +29949,13 @@ try {
         basehead: `${(_a = github.context.payload.pull_request) === null || _a === void 0 ? void 0 : _a.base.sha}...${(_b = github.context.payload.pull_request) === null || _b === void 0 ? void 0 : _b.head.sha}`,
     });
     compareResult.then((result) => {
-        console.log(result.data);
+        var _a;
+        console.log("▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼");
+        console.log((_a = result.data.files) === null || _a === void 0 ? void 0 : _a.map((file) => ({
+            filename: file.filename,
+            status: file.status,
+            hoge: file.previous_filename,
+        })));
     });
 }
 catch (error) {
