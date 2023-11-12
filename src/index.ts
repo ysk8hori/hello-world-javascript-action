@@ -24,7 +24,9 @@ try {
     repo: github.context.repo.repo,
     basehead: `${github.context.payload.pull_request?.base.sha}...${github.context.payload.pull_request?.head.sha}`,
   });
-  console.log(compareResult);
+  compareResult.then((result) => {
+    console.log(result.data);
+  });
 } catch (error) {
   core.setFailed((error as Error).message);
 }

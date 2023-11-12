@@ -29948,7 +29948,9 @@ try {
         repo: github.context.repo.repo,
         basehead: `${(_a = github.context.payload.pull_request) === null || _a === void 0 ? void 0 : _a.base.sha}...${(_b = github.context.payload.pull_request) === null || _b === void 0 ? void 0 : _b.head.sha}`,
     });
-    console.log(compareResult);
+    compareResult.then((result) => {
+        console.log(result.data);
+    });
 }
 catch (error) {
     core.setFailed(error.message);
